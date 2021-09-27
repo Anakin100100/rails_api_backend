@@ -109,12 +109,10 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.1)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.4)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pry (0.14.1)
@@ -226,34 +224,34 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
-  capybara (>= 3.26)
+  capybara
   devise
   dotenv-rails
-  jbuilder (~> 2.7)
-  listen (~> 3.3)
+  jbuilder
+  listen
   pry
-  puma (~> 5.0)
+  puma
   rack-cors
-  rack-mini-profiler (~> 2.0)
+  rack-mini-profiler
   rails (~> 6.1.4, >= 6.1.4.1)
-  sass-rails (>= 6)
+  sass-rails
   selenium-webdriver
   simple_token_authentication
   spring
   sqlite3 (~> 1.4)
-  turbolinks (~> 5)
+  turbolinks
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
-  webpacker (~> 5.0)
+  webpacker
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 3.0.2p107
 
 BUNDLED WITH
-   1.17.3
+   2.2.28

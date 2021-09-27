@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+    get "/healthcheck" => "healthcheck#healthcheck"
     post "/users" => "registrations#register"
     delete "/users" => "registrations#unregister"
     get "/login" => "sessions#login"
