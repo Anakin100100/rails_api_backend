@@ -5,7 +5,7 @@ module Activityres
         skip_before_action :verify_authenticity_token
 
         def create
-            @body = get_body 
+            @body = body_read 
             if verify_user
                 @activity = Activity.new
                 @activity.name = @body[:activity][:name] 
@@ -23,7 +23,7 @@ module Activityres
         end 
 
         def read
-            @body = get_body 
+            @body = body_read 
             if verify_user
                 if verify_ownership
                     render :json => {
@@ -43,7 +43,7 @@ module Activityres
         end 
 
         def update
-            @body = get_body 
+            @body = body_read 
             if verify_user
                 if verify_ownership
                     activity = Activity.find(@body[:activity][:id])
@@ -65,7 +65,7 @@ module Activityres
         end 
 
         def delete
-            @body = get_body 
+            @body = body_read   
             if verify_user
                 if verify_ownership
                     activity = Activity.find(@body[:activity][:id])
@@ -118,11 +118,11 @@ module Activityres
             end
         end
 
-        def get_body
-            raw_body = request.body.read 
-            body = JSON.parse raw_body
-            body = body.deep_symbolize_keys
-            return body
+        def body_read
+            raw_body = request.body.read
+            hash_string_keys_body = JSON.parse raw_body
+            hash_symbol_keys_body = hash_string_keys_body.deep_symbolize_keys 
+            return hash_symbol_keys_body
         end
     end
 end
